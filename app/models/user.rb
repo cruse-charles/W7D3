@@ -37,9 +37,15 @@ class User < ApplicationRecord
     end
 
     
+    def ensure_session_token
+        self.session_token ||= generate_unique_session_token
+    end
 
-
-
+    def reset_session_token!
+        self.session_token = generate_unique_session_token
+        self.save!
+        self.session_token
+    end
 
 
 
