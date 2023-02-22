@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :user do
-    username { "MyString" }
-    string { "MyString" }
-    password { "MyString" }
+    username { Faker::Movies::HarryPotter.character }
+    password { Faker::Book.genre }
   end
 end
